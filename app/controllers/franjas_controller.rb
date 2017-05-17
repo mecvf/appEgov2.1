@@ -26,7 +26,21 @@ class FranjasController < ApplicationController
   def create
     @franja = Franja.new(franja_params)
     @franja.fecha = Time.now
-
+    if @franja.primera_hasta==nil  
+        @franja.primera_hasta=0
+    end
+    if @franja.primera_precio==nil 
+      @franja.primera_precio=0
+    end
+    if @franja.segunda_hasta==nil
+      @franja.segunda_hasta=0
+    end
+    if @franja.segunda_precio==nil
+      @franja.segunda_precio=0
+    end
+    if @franja.tercera_precio==nil
+      @franja.tercera_precio=0
+    end
     respond_to do |format|
       if @franja.save
         format.html { redirect_to @franja, notice: 'La Franja se creo correctamente.' }
