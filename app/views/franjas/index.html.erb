@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Franjas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Sueldos hasta</th>
+      <th>Valor del ticket</th>
+      <th>Sueldos hasta</th>
+      <th>Valor del ticket</th>
+      <th>Sueldos mayores a</th>
+      <th>Valor del ticket</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @franjas.each do |franja| %>
+      <tr>
+        <td><%= franja.fecha.to_formatted_s(:short) %></td>
+        <td><%= franja.primera_hasta %></td>
+        <td><%= franja.primera_precio %></td>
+        <td><%= franja.segunda_hasta %></td>
+        <td><%= franja.segunda_precio %></td>
+        <td><%= franja.segunda_hasta %></td>
+        <td><%= franja.tercera_precio %></td>
+        <td><%= link_to 'Ver', franja %></td>
+        <td><%= link_to 'Editar', edit_franja_path(franja) %></td>
+        <td><%= link_to 'Eliminar', franja, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Franja', new_franja_path %>

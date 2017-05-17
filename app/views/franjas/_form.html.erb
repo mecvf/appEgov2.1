@@ -1,0 +1,49 @@
+<%= form_for(franja) do |f| %>
+  <% if franja.errors.any? %>
+    <div id="error_explanation">
+      <h2>Tenemos <%= pluralize(franja.errors.count, "error") %>, no se puede guardar esta franja:</h2>
+
+      <ul>
+      <% franja.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <!--  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.datetime_select :fecha %>
+  </div> -->
+
+  <div class="field">
+    <%= f.label "Sueldos_hasta: " %>
+    <%= f.number_field :primera_hasta,min:0 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Valor del ticket: " %>
+    <%= f.number_field :primera_precio, min:0 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Sueldos hasta: " %>
+    <%= f.number_field :segunda_hasta, min:0 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Valor del ticket: " %>
+    <%= f.number_field :segunda_precio, min:0 %>
+  </div>
+  <div class="field">
+    <%= f.label "Sueldos mayores: " %>
+  </div>
+  <div class="field">
+    <%= f.label "Valor del ticket: " %>
+    <%= f.number_field :tercera_precio, min:0 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Guardar Franja" %>
+  </div>
+<% end %>
