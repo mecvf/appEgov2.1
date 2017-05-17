@@ -6,5 +6,12 @@ module ApplicationHelper
  #    ]
   #end
 
-  
+  def tipo_bebidas
+  	[	
+		['Comun'],
+		['Light'],
+		['Zero'],
+		['Otros'],
+  	]
+  end
 end

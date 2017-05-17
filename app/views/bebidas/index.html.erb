@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bebidas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Tamaño</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bebidas.each do |bebida| %>
+      <tr>
+        <td><%= bebida.nombre %></td>
+        <td><%= bebida.tipo %></td>
+        <td><%= bebida.tamanio %></td>
+        <td><%= bebida.precio %></td>
+        <td><%= link_to 'Ver', bebida %></td>
+        <td><%= link_to 'Editar', edit_bebida_path(bebida) %></td>
+        <td><%= link_to 'Eliminar', bebida, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Bebida', new_bebida_path %>

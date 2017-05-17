@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bebidas
   resources :franjas
   resources :productos
   resources :tipos
