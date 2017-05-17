@@ -28,7 +28,7 @@ class BebidasController < ApplicationController
 
     respond_to do |format|
       if @bebida.save
-        format.html { redirect_to @bebida, notice: 'Bebida was successfully created.' }
+        format.html { redirect_to @bebida, notice: 'La Bebida se ha creado correctamente.' }
         format.json { render :show, status: :created, location: @bebida }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BebidasController < ApplicationController
   def update
     respond_to do |format|
       if @bebida.update(bebida_params)
-        format.html { redirect_to @bebida, notice: 'Bebida was successfully updated.' }
+        format.html { redirect_to @bebida, notice: 'La Bebida se ha modificado correctamente.' }
         format.json { render :show, status: :ok, location: @bebida }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BebidasController < ApplicationController
   def destroy
     @bebida.destroy
     respond_to do |format|
-      format.html { redirect_to bebidas_url, notice: 'Bebida was successfully destroyed.' }
+      format.html { redirect_to bebidas_url, notice: 'La Bebida se ha eliminado correctamente.' }
       format.json { head :no_content }
     end
   end

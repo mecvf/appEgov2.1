@@ -14,4 +14,12 @@ module ApplicationHelper
 		['Otros'],
   	]
   end
+  def tamanio_bebidas
+  	[	
+		['500'],
+		['600'],
+		['Litro'],
+		['1.25'],
+  	]
+  end
 end

@@ -15,15 +15,6 @@ ActiveRecord::Schema.define(version: 20170517014423) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "kind"
-    t.decimal  "balance"
-    t.string   "currency"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "bebidas", force: :cascade do |t|
     t.string   "nombre"
     t.string   "tipo"
@@ -34,6 +25,17 @@ ActiveRecord::Schema.define(version: 20170517014423) do
   end
 
   create_table "franjas", force: :cascade do |t|
+    t.datetime "fecha"
+    t.decimal  "primera_hasta"
+    t.decimal  "primera_precio"
+    t.decimal  "segunda_hasta"
+    t.decimal  "segunda_precio"
+    t.decimal  "tercera_precio"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "fringes", force: :cascade do |t|
     t.datetime "fecha"
     t.decimal  "primera_hasta"
     t.decimal  "primera_precio"

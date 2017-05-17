@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= f.label "Tamaño" %>
-    <%= f.text_field :tamanio %>
+    <%= f.select :tamanio, tamanio_bebidas %>
   </div>
 
   <div class="field">
     <%= f.label :precio %>
-    <%= f.text_field :precio %>
+    <%= f.number_field :precio %>
   </div>
 
   <div class="actions">
