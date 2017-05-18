@@ -203,3 +203,39 @@ body {
 .input-group .form-control {
   z-index: auto;
 }
+
+
+
+/* Modificaciones*/
+
+
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: rgb(0,0,0);
+  text-decoration: none;
+}
+
+.navbar-right li a:hover, .navbar-right li a:focus{
+  color: rgb(0,0,0) !important;
+  text-decoration: none;
+}
+
+.btn-primary{
+  background-color: rgb(158,239,159);
+  border-color: rgb(231,231,231);
+  color: rgb(0,0,0);
+}
+
+.navbar-default {
+  background-color: darken($btn-default-bg, 40%);
+  border-color: darken($btn-default-bg, 15%);
+}
+
+.btn-danger{
+  background-color: rgb(255,035,001);
+}
+
+.btn-danger:focus, .btn-danger:hover{
+  background-color: rgb(204,006,005)!important;
+}
+

@@ -2,32 +2,30 @@
 
 <h1>Productos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>Tipo de Producto</th>
-      <th>Precio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-12">
+    <div class="listing">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Tipo de Producto</th>
+              <th>Precio</th>
+              <th colspan="3"></th>
+            </tr>
+        </thead>
+      <tbody>
+        <tbody>
+                <%= render @productos %>
+        </tbody>
+      </table>
 
-  <tbody>
-    <% @productos.each do |producto| %>
-      <tr>
-        <td><%= producto.nombre %></td>
-        <td><%= producto.descripcion %></td>
-        <td><%= producto.tipo.nombre %></td>
-        <td><%= producto.precio %></td>
-        <td><%= link_to 'Ver', producto %></td>
-        <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
-        <td><%= link_to 'Eliminar', producto, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+  </div
 
 <br>
 
-<%= link_to 'Nuevo Producto', new_producto_path %>
+<%= link_to 'Nuevo Producto', new_producto_path, class: 'btn btn-default' %>

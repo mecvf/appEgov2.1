@@ -1,0 +1,18 @@
+<tr>
+  <td><%= franja.fecha.to_formatted_s(:short)  %></td>
+  <td><%= franja.primera_hasta %></td>
+  <td><%= franja.primera_precio %></td>
+  <td><%= franja.segunda_hasta %></td>
+  <td><%= franja.segunda_precio %></td>
+  <td><%= franja.segunda_hasta %></td>
+  <td><%= franja.tercera_precio %></td>
+
+  <td>
+    <%= link_to 'Edit', edit_franja_path(franja), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'Delete',
+                franja,
+                method: :delete,
+                class: 'btn btn-danger btn-sm',
+                data: { confirm: 'Esta seguro de eliminar esta franja?' } %>
+  </td>
+</tr>

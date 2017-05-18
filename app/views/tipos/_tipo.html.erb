@@ -1,0 +1,12 @@
+<tr>
+  <td><%= tipo.nombre %></td>
+  <td><%= tipo.descripcion %></td>
+  <td>
+    <%= link_to 'Edit', edit_tipo_path(tipo), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'Delete',
+                tipo,
+                method: :delete,
+                class: 'btn btn-danger btn-sm',
+                data: { confirm: 'Esta seguro de eliminar este tipo?' } %>
+  </td>
+</tr>
