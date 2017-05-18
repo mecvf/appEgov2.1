@@ -8,6 +8,7 @@
   <td><%= franja.tercera_precio %></td>
 
   <td>
+    <%= link_to 'Ver', franja, class: 'btn btn-success btn-sm' %>
     <%= link_to 'Editar', edit_franja_path(franja), class: 'btn btn-default btn-sm' %>
     <%= link_to 'Eliminar',
                 franja,

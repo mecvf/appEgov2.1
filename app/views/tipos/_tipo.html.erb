@@ -2,6 +2,7 @@
   <td><%= tipo.nombre %></td>
   <td><%= tipo.descripcion %></td>
   <td>
+    <%= link_to 'Ver', tipo, class: 'btn btn-success btn-sm' %>
     <%= link_to 'Editar', edit_tipo_path(tipo), class: 'btn btn-default btn-sm' %>
     <%= link_to 'Eliminar',
                 tipo,

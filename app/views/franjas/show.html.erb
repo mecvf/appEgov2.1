@@ -31,6 +31,8 @@
   <strong>Valor del ticket:</strong>
   <%= @franja.tercera_precio %>
 </p>
-
-<%= link_to 'Editar', edit_franja_path(@franja) %> |
-<%= link_to 'Volver', franjas_path %>
+</br>
+<div class="btn-group-vertical">
+<%= link_to 'Editar', edit_franja_path(@franja), class: 'btn btn-default' %> 
+<%= link_to 'Volver', franjas_path, class: 'btn btn-info' %>
+</div>

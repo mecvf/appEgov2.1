@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
 
+
+<p id="notice"><%= notice %></p>
 <p>
   <strong>Nombre:</strong>
   <%= @bebida.nombre %>
@@ -19,6 +20,7 @@
   <strong>Precio:</strong>
   <%= @bebida.precio %>
 </p>
-
-<%= link_to 'Editar', edit_bebida_path(@bebida) %> |
-<%= link_to 'Volver', bebidas_path %>
+<div class="btn-group-vertical">
+<%= link_to 'Editar', edit_bebida_path(@bebida), class: 'btn btn-default' %> 
+<%= link_to 'Volver', bebidas_path, class: 'btn btn-info' %>
+</div>

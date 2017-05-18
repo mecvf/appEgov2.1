@@ -17,5 +17,8 @@
   <strong>Precio:</strong>
   <%= @producto.precio %>
 </p>
-<%= link_to 'Editar', edit_producto_path(@producto) %> |
-<%= link_to 'Volver', productos_path %>
+<div class="btn-group-vertical">
+<%= link_to 'Editar', edit_producto_path(@producto), class: 'btn btn-default' %> 
+<%= link_to 'Volver', productos_path, class: 'btn btn-info' %>
+</div>
+

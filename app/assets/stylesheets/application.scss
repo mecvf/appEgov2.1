@@ -208,7 +208,15 @@ body {
 
 /* Modificaciones*/
 
+.navbar-default .navbar-brand {
+  color: rgb(255,255,255);
+  text-decoration: none;
+}
 
+.navbar-right li a{
+  color: rgb(255,255,255) !important;
+  text-decoration: none;
+}
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: rgb(0,0,0);
@@ -241,3 +249,6 @@ body {
   border-color: rgb(245,064,033);
 }
 
+.panel-footer{
+  background-color: darken($btn-default-bg, 30%);
+}

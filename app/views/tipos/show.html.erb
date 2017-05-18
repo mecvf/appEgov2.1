@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nombre:</strong>
-  <%= @tipo.nombre %>
+  <strong>Nombre: </strong>  <%= @tipo.nombre %>
 </p>
 
 <p>
-  <strong>Descripcion:</strong>
+  <strong>Descripcion: </strong>
   <%= @tipo.descripcion %>
 </p>
-
-<%= link_to 'Editar', edit_tipo_path(@tipo) %> |
-<%= link_to 'Volver', tipos_path %>
+</br>
+<div class="btn-group-vertical">
+<%= link_to 'Editar', edit_tipo_path(@tipo), class: 'btn btn-default' %> 
+<%= link_to 'Volver', tipos_path, class: 'btn btn-info' %>
+</div>

@@ -4,6 +4,7 @@
   <td><%= bebida.tamanio %></td>
   <td><%= bebida.precio %></td>
   <td>
+    <%= link_to 'Ver', bebida, class: 'btn btn-success btn-sm' %>
     <%= link_to 'Editar', edit_bebida_path(bebida), class: 'btn btn-default btn-sm' %>
     <%= link_to 'Eliminar',
                 bebida,

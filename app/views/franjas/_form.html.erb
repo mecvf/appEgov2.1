@@ -1,49 +1,38 @@
 <%= form_for(franja) do |f| %>
-  <% if franja.errors.any? %>
-    <div id="error_explanation">
-      <h2>Tenemos <%= pluralize(franja.errors.count, "error") %>, no se puede guardar esta franja:</h2>
-
-      <ul>
+  <div class="panel panel-default">
+    <div class="panel-body">
       <% franja.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="alert alert-danger"><%= message %></div>
       <% end %>
-      </ul>
+
+      <div class="panel-body form-group">
+        <p><%= f.label "Primera franja, sueldos hasta: " %></p>
+        <%= f.number_field :primera_hasta,min:0, class: 'form-control' %>
+      </div>
+      <div class="panel-body form-group">
+        <p><%= f.label "Valor del ticket primera franja: " %></p>
+        <%= f.number_field :primera_precio, min:0, class: 'form-control' %>
+      </div>
+      <div class="panel-body form-group">
+      <p><%= f.label "Segunda franja, sueldos hasta: " %></p>
+      <%= f.number_field :segunda_hasta, min:0, class: 'form-control' %>
+  </div>
+  
+  <div class="panel-body form-group">
+    <p><%= f.label "Valor del ticket segunda franja: " %></p>
+    <%= f.number_field :segunda_precio, min:0, class: 'form-control' %>
+  </div>
+    <div class="panel-body form-group">
+    <p><%= f.label "Valor del ticket para sueldos mayores: " %></p>
+    <%= f.number_field :tercera_precio, min:0, class: 'form-control' %>
+  </div>
+  </br>
+    <div class="panel-footer text-right">
+      <%= link_to 'Cancel', productos_path, class: 'btn btn-default btn-sm'  %>
+      <%= f.submit "Guardar Franja", class: 'btn btn-default btn-sm' %>
     </div>
-  <% end %>
-
- <!--  <div class="field">
-    <%= f.label :fecha %>
-    <%= f.datetime_select :fecha %>
-  </div> -->
-
-  <div class="field">
-    <%= f.label "Sueldos_hasta: " %>
-    <%= f.number_field :primera_hasta,min:0 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Valor del ticket: " %>
-    <%= f.number_field :primera_precio, min:0 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Sueldos hasta: " %>
-    <%= f.number_field :segunda_hasta, min:0 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Valor del ticket: " %>
-    <%= f.number_field :segunda_precio, min:0 %>
-  </div>
-  <div class="field">
-    <%= f.label "Sueldos mayores: " %>
-  </div>
-  <div class="field">
-    <%= f.label "Valor del ticket: " %>
-    <%= f.number_field :tercera_precio, min:0 %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Guardar Franja" %>
   </div>
 <% end %>
+
+
+

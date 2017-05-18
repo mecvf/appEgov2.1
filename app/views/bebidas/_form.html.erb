@@ -1,37 +1,29 @@
+
 <%= form_for(bebida) do |f| %>
-  <% if bebida.errors.any? %>
-    <div id="error_explanation">
-      <h2>Tenemos <%= pluralize(bebida.errors.count, "error") %> , no se puede guardar esta bebida:</h2>
-
-      <ul>
+  <div class="panel panel-default">
+    <div class="panel-body">
       <% bebida.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="alert alert-danger"><%= message %></div>
       <% end %>
-      </ul>
+
+      <div class="panel-body form-group">
+        <p><%= f.label :nombre %></p>
+        <%= f.text_field :nombre, class: 'form-control' %>
+      </div>
+      <div class="panel-body form-group">
+        <p><%= f.label :tipo %></p>
+         <%= f.select :tipo, tipo_bebidas, {}, class: 'form-control' %>
+      </div>
+      
+  </br>
+  <div class="panel-body form-group">
+    <p><%= f.label :precio %></p>
+    <%= f.number_field :precio, min: 0, class: 'form-control' %>
+  </div>
+  </br>
+    <div class="panel-footer text-right">
+      <%= link_to 'Cancel', productos_path, class: 'btn btn-default btn-sm'  %>
+      <%= f.submit "Guardar Bebida", class: 'btn btn-default btn-sm' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nombre %>
-    <%= f.text_field :nombre %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tipo %>
-    <%= f.select :tipo, tipo_bebidas %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Tamaño" %>
-    <%= f.select :tamanio, tamanio_bebidas %>
-  </div>
-
-  <div class="field">
-    <%= f.label :precio %>
-    <%= f.number_field :precio %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Guardar Bebida"%>
   </div>
 <% end %>
