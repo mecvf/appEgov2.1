@@ -8,11 +8,11 @@
   <td><%= franja.tercera_precio %></td>
 
   <td>
-    <%= link_to 'Edit', edit_franja_path(franja), class: 'btn btn-default btn-sm' %>
-    <%= link_to 'Delete',
+    <%= link_to 'Editar', edit_franja_path(franja), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'Eliminar',
                 franja,
                 method: :delete,
-                class: 'btn btn-danger btn-sm',
+                class: 'btn btn-warning btn-sm',
                 data: { confirm: 'Esta seguro de eliminar esta franja?' } %>
   </td>
 </tr>

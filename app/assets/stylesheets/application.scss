@@ -231,11 +231,13 @@ body {
   border-color: darken($btn-default-bg, 15%);
 }
 
-.btn-danger{
-  background-color: rgb(255,035,001);
+.btn-warning{
+  background-color: rgb(247,094,037);
+  border-color: rgb(245,064,033);
 }
 
-.btn-danger:focus, .btn-danger:hover{
-  background-color: rgb(204,006,005)!important;
+.btn-warning:focus, .btn-warning:hover{
+  background-color: rgb(248,000,000)!important;
+  border-color: rgb(245,064,033);
 }
 

@@ -4,11 +4,11 @@
   <td><%= producto.tipo.nombre %></td>
   <td><%= producto.precio %></td>
   <td>
-    <%= link_to 'Edit', edit_producto_path(producto), class: 'btn btn-default btn-sm' %>
-    <%= link_to 'Delete',
+    <%= link_to 'Editar', edit_producto_path(producto), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'Eliminar',
                 producto,
                 method: :delete,
-                class: 'btn btn-danger btn-sm',
+                class: 'btn btn-warning btn-sm',
                 data: { confirm: 'Esta seguro de eliminar este producto?' } %>
   </td>
 </tr>
