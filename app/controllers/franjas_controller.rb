@@ -43,7 +43,7 @@ class FranjasController < ApplicationController
     end
     respond_to do |format|
       if @franja.save
-        format.html { redirect_to @franja, notice: 'La Franja se creo correctamente.' }
+        format.html { redirect_to @franja, notice: 'La Franja se ha creado correctamente.' }
         format.json { render :show, status: :created, location: @franja }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class FranjasController < ApplicationController
   def update
     respond_to do |format|
       if @franja.update(franja_params)
-        format.html { redirect_to @franja, notice: 'La Franja se modifico correctamente.' }
+        format.html { redirect_to @franja, notice: 'La Franja se ha editado correctamente.' }
         format.json { render :show, status: :ok, location: @franja }
       else
         format.html { render :edit }

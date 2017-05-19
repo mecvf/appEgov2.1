@@ -42,7 +42,7 @@ class BebidasController < ApplicationController
   def update
     respond_to do |format|
       if @bebida.update(bebida_params)
-        format.html { redirect_to @bebida, notice: 'La Bebida se ha modificado correctamente.' }
+        format.html { redirect_to @bebida, notice: 'La Bebida se ha editado correctamente.' }
         format.json { render :show, status: :ok, location: @bebida }
       else
         format.html { render :edit }
