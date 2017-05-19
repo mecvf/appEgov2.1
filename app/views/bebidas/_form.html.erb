@@ -12,7 +12,11 @@
       </div>
       <div class="panel-body form-group">
         <p><%= f.label :tipo %></p>
-         <%= f.select :tipo, tipo_bebidas, {}, class: 'form-control' %>
+         <%= f.select :tipo, tipo_bebidas, { include_blank: 'Seleccionar tipo de bebida' }, class: 'form-control' %>
+      </div>
+      <div class="panel-body form-group">
+        <p><%= f.label 'Tamaño' %></p>
+         <%= f.select :tamanio, tamanio_bebidas, { include_blank: 'Seleccionar tamaño' }, class: 'form-control' %>
       </div>
       
   </br>
@@ -22,7 +26,7 @@
   </div>
   </br>
     <div class="panel-footer text-right">
-      <%= link_to 'Cancel', productos_path, class: 'btn btn-default btn-sm'  %>
+      <%= link_to 'Cancel', bebidas_path, class: 'btn btn-default btn-sm'  %>
       <%= f.submit "Guardar Bebida", class: 'btn btn-default btn-sm' %>
     </div>
   </div>
