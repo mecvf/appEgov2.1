@@ -2,7 +2,7 @@
 
 <p>
   <strong>Nombre:</strong>
-  <%= @producto.nombre if @producto.nombre %>
+  <%= @producto.nombre %>
 </p>
 
 <p>
@@ -11,7 +11,7 @@
 </p>
 <p>
   <strong>Tipo de producto:</strong>
-  <%= @producto.tipo.nombre %>
+  <%= @producto.tipo.nombre if @producto.tipo%>
 </p>
 <p>
   <strong>Precio:</strong>

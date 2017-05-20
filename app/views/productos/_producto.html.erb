@@ -1,7 +1,7 @@
 <tr>
-  <td><%= producto.nombre if producto%></td>
+  <td><%= producto.nombre %></td>
   <td><%= producto.descripcion %></td>
-  <td><%= producto.tipo.nombre %></td>
+  <td><%= producto.tipo.nombre if producto.tipo %></td>
   <td><%= producto.precio %></td>
   <td>
   <div class="btn-group">
