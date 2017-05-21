@@ -1,5 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+
 one:
   nombre: MyString
   descripcion: MyText
@@ -7,3 +8,9 @@ one:
 two:
   nombre: MyString
   descripcion: MyText
+
+three:
+  nombre: ArrozConLeche
+  descripcion: arroz,leche,canela
+  tipo_id: 1
+  precio: 100
