@@ -252,3 +252,13 @@ body {
 .panel-footer{
   background-color: darken($btn-default-bg, 30%);
 }
+
+.btn-info{
+  background-color: darken($btn-default-bg, 50%);
+  border-color: rgb(231,231,231);
+  }
+
+.btn-info:focus, .btn-info:hover{
+  background-color: darken($btn-default-bg, 30%);
+  border-color: rgb(231,231,231);
+}
