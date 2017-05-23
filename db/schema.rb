@@ -35,17 +35,6 @@ ActiveRecord::Schema.define(version: 20170517014423) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "fringes", force: :cascade do |t|
-    t.datetime "fecha"
-    t.decimal  "primera_hasta"
-    t.decimal  "primera_precio"
-    t.decimal  "segunda_hasta"
-    t.decimal  "segunda_precio"
-    t.decimal  "tercera_precio"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "productos", force: :cascade do |t|
     t.string   "nombre"
     t.text     "descripcion"
