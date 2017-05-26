@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @menu.fecha %>
+</p>
+<p>
+  <strong>Producto:</strong>
+  <%= @menu.producto.nombre if @menu.producto%>
+</p>
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

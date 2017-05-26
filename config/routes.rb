@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menus
   get 'welcome/index'
 
   resources :bebidas

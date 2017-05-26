@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517014423) do
+ActiveRecord::Schema.define(version: 20170526014635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20170517014423) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "menus", force: :cascade do |t|
+    t.date     "fecha"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "producto_id"
+    t.index ["producto_id"], name: "index_menus_on_producto_id", using: :btree
+  end
+
   create_table "productos", force: :cascade do |t|
     t.string   "nombre"
     t.text     "descripcion"
@@ -52,5 +60,6 @@ ActiveRecord::Schema.define(version: 20170517014423) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "menus", "productos"
   add_foreign_key "productos", "tipos"
 end
