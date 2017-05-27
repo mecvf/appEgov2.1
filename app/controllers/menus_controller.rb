@@ -5,6 +5,7 @@ class MenusController < ApplicationController
   # GET /menus.json
   def index
     @menus = Menu.all
+    @productos = Producto.all
   end
 
   # GET /menus/1
@@ -69,6 +70,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:fecha)
+      params.require(:menu).permit(:fecha, :producto_id)
     end
 end

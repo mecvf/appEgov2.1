@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :menus
+  resources :menus do
+  	resources :productos
+  end
 
   resources :empresas
 

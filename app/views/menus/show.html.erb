@@ -8,5 +8,7 @@
   <strong>Producto:</strong>
   <%= @menu.producto.nombre if @menu.producto%>
 </p>
-<%= link_to 'Edit', edit_menu_path(@menu) %> |
-<%= link_to 'Back', menus_path %>
+<div class="btn-group-vertical">
+<%= link_to 'Editar', edit_menu_path(@menu) %> |
+<%= link_to 'Volver', menus_path %>
+</div>
