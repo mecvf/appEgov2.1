@@ -1,5 +1,6 @@
 class Producto < ApplicationRecord
-	has_many :menus, dependent: :destroy
+	has_many :tiene_productos
+	has_many :menus, through: :tiene_productos
 	belongs_to :tipo, optional: true
 	
 	validates :nombre, presence: {message: "^Debe ingresar un nombre"}

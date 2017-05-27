@@ -16,17 +16,19 @@ class MenusController < ApplicationController
   # GET /menus/new
   def new
     @menu = Menu.new
+    @productos = Producto.all
   end
 
   # GET /menus/1/edit
   def edit
+    @productos = Producto.all
   end
 
   # POST /menus
   # POST /menus.json
   def create
     @menu = Menu.new(menu_params)
-
+    @menu.productos = params[:productos]
     respond_to do |format|
       if @menu.save
         format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
@@ -70,6 +72,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:fecha, :producto_id)
+      params.require(:menu).permit(:fecha, :productos)
     end
 end

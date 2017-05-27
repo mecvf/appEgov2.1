@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526151038) do
+ActiveRecord::Schema.define(version: 20170527145525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,10 +48,8 @@ ActiveRecord::Schema.define(version: 20170526151038) do
 
   create_table "menus", force: :cascade do |t|
     t.date     "fecha"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "producto_id"
-    t.index ["producto_id"], name: "index_menus_on_producto_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "productos", force: :cascade do |t|
@@ -64,6 +62,15 @@ ActiveRecord::Schema.define(version: 20170526151038) do
     t.index ["tipo_id"], name: "index_productos_on_tipo_id", using: :btree
   end
 
+  create_table "tiene_productos", force: :cascade do |t|
+    t.integer  "menu_id"
+    t.integer  "producto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["menu_id"], name: "index_tiene_productos_on_menu_id", using: :btree
+    t.index ["producto_id"], name: "index_tiene_productos_on_producto_id", using: :btree
+  end
+
   create_table "tipos", force: :cascade do |t|
     t.string   "nombre"
     t.text     "descripcion"
@@ -71,6 +78,7 @@ ActiveRecord::Schema.define(version: 20170526151038) do
     t.datetime "updated_at",  null: false
   end
 
-  add_foreign_key "menus", "productos"
   add_foreign_key "productos", "tipos"
+  add_foreign_key "tiene_productos", "menus"
+  add_foreign_key "tiene_productos", "productos"
 end

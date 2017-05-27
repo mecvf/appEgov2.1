@@ -13,8 +13,15 @@
   </div>
   </br>
   <div class="panel-body form-group">
-    <p><%= f.label :producto_id %></p>
-    <%= f.select :producto_id,  Producto.all.collect {|t| [ t.nombre, t.id ] }, { include_blank: 'Seleccionar el Producto' }, class: 'form-control' %>
+    <p><label>Productos</label></p>
+  
+    <% @productos.each do |producto| %>
+      <div class="field">
+      <%= check_box_tag "productos[]", producto.id  %> <%= producto.nombre %>
+      </div>
+    <%end%>
+
+
   </div>
   
   </br>

@@ -5,10 +5,15 @@
   <%= @menu.fecha %>
 </p>
 <p>
-  <strong>Producto:</strong>
-  <%= @menu.producto.nombre if @menu.producto%>
+  <strong>Productos:</strong>
+  <% @menu.productos %>
 </p>
+
+<% @menu.productos.each do |producto| %>
+  <p><%= link_to producto.nombre, producto %></p>
+<%end%>
+
 <div class="btn-group-vertical">
-<%= link_to 'Editar', edit_menu_path(@menu) %> |
-<%= link_to 'Volver', menus_path %>
+<%= link_to 'Editar', edit_menu_path(@menu) , class: 'btn btn-default' %>
+<%= link_to 'Volver', menus_path , class: 'btn btn-info' %>
 </div>
