@@ -6,6 +6,7 @@ class MenusController < ApplicationController
   def index
     @menus = Menu.all
     @productos = Producto.all
+    @tiene_productos = TieneProducto.all
   end
 
   # GET /menus/1
@@ -17,11 +18,13 @@ class MenusController < ApplicationController
   def new
     @menu = Menu.new
     @productos = Producto.all
+    @tipos = Tipo.all
   end
 
   # GET /menus/1/edit
   def edit
     @productos = Producto.all
+    @tipos = Tipo.all
   end
 
   # POST /menus
@@ -74,6 +77,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:fecha, :productos)
+      params.require(:menu).permit(:fecha, :productos, :producto_id)
     end
 end

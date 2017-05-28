@@ -1,4 +1,5 @@
 <%= form_for(menu) do |f| %>
+
 <div class="panel panel-default">
     <div class="panel-body">
         <% menu.errors.full_messages.each do |message| %>
@@ -13,12 +14,21 @@
   </div>
   </br>
   <div class="panel-body form-group">
-    <p><label>Productos</label></p>
+    <!--<p><label>Productos</label></p>-->
   
-    <% @productos.each do |producto| %>
-      <div class="field">
-      <%= check_box_tag "productos[]", producto.id  %> <%= producto.nombre %>
-      </div>
+    <% @tipos.each do |t| %>
+      <p><label><%= t.nombre %></label></p>
+      <% @productos.each do |producto| %>
+        <%if producto.tipo.nombre==t.nombre %>
+        
+        <div class="field">
+        
+        <%= check_box_tag "productos[]", producto.id  %> <%= producto.nombre %>
+        </div>
+      <%else%>
+      
+      <%end%>
+    <%end%>
     <%end%>
 
 
@@ -38,3 +48,5 @@
     </div>
   </div>
 <% end %>
+
+
