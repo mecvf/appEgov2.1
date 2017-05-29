@@ -22,9 +22,10 @@
         <%if producto.tipo.nombre==t.nombre %>
         
         <div class="field">
-        
         <%= check_box_tag "productos[]", producto.id  %> <%= producto.nombre %>
         </div>
+        <br>
+
       <%else%>
       
       <%end%>

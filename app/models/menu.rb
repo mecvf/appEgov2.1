@@ -16,12 +16,14 @@ class Menu < ApplicationRecord
 
 	def edit_productos
 		#NO SE COMO HACER PARA MODIFICAR DE A UNA LAS LINEAS DE LA BASE DE DATOS...
-		@i=0
+		TieneProducto.where(menu_id: self.id).destroy_all
+		
 		@productos.each do |producto_id|
 			
 		#raise @productos.to_yaml
-		TieneProducto.where(menu_id: self.id, id: @i).update(producto_id: producto_id)
-		@i=@i+1
+		
+		TieneProducto.create(producto_id: producto_id, menu_id: self.id)
+		
 		end
 	end
 

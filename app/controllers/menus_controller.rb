@@ -25,6 +25,7 @@ class MenusController < ApplicationController
   def edit
     @productos = Producto.all
     @tipos = Tipo.all
+   
   end
 
   # POST /menus
