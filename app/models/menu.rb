@@ -1,9 +1,12 @@
 class Menu < ApplicationRecord
+	#validates :fecha, uniqueness: true
 	has_many :tiene_productos
 	has_many :productos, through: :tiene_productos
 	after_create :save_productos
 	after_update :edit_productos
 	before_destroy :destroy_productos
+
+	
 	def productos=(value)
 		@productos = value
 	end
@@ -15,7 +18,7 @@ class Menu < ApplicationRecord
 	end
 
 	def edit_productos
-		#NO SE COMO HACER PARA MODIFICAR DE A UNA LAS LINEAS DE LA BASE DE DATOS...
+		
 		TieneProducto.where(menu_id: self.id).destroy_all
 		
 		@productos.each do |producto_id|

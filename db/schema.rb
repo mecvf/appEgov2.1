@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527145525) do
+ActiveRecord::Schema.define(version: 20170529165654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170527145525) do
     t.date     "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["fecha"], name: "index_menus_on_fecha", unique: true, using: :btree
   end
 
   create_table "productos", force: :cascade do |t|
