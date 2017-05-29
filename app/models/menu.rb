@@ -1,20 +1,23 @@
 class Menu < ApplicationRecord
-	#validates :fecha, uniqueness: true
 	has_many :tiene_productos
 	has_many :productos, through: :tiene_productos
+
 	after_create :save_productos
 	after_update :edit_productos
 	before_destroy :destroy_productos
 
 	validates :fecha, uniqueness: {message: "^Ya existe menu para esa fecha"}
+	validates :save_productos, presence: {message: "^Debe ingresar al menos 1 producto"}
 
 	def productos=(value)
 		@productos = value
 	end
 
 	def save_productos
-		@productos.each do |producto_id|
-		TieneProducto.create(producto_id: producto_id, menu_id: self.id)
+		if @productos != nil
+			@productos.each do |producto_id|
+				TieneProducto.create(producto_id: producto_id, menu_id: self.id)
+			end
 		end
 	end
 

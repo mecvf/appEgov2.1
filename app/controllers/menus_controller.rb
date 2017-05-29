@@ -13,6 +13,7 @@ class MenusController < ApplicationController
   # GET /menus/1
   # GET /menus/1.json
   def show
+    @tipos = Tipo.all
   end
 
   # GET /menus/new
@@ -36,13 +37,17 @@ class MenusController < ApplicationController
     @productos = Producto.all
     @menu = Menu.new(menu_params)
     @menu.productos = params[:productos]
-    respond_to do |format|
-      if @menu.save
-        format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
-        format.json { render :show, status: :created, location: @menu }
-      else
-        format.html { render :new }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
+    if @menu.productos == nil
+      format.html { render :new, notice: 'Debe seleccionar al menos 1 producto.' }
+    else
+      respond_to do |format|
+        if @menu.save
+          format.html { redirect_to @menu, notice: 'El Menu se ha creado correctamente .' }
+          format.json { render :show, status: :created, location: @menu }
+        else
+          format.html { render :new }
+          format.json { render json: @menu.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -54,7 +59,7 @@ class MenusController < ApplicationController
       @menu.productos = params[:productos]
       if @menu.update(menu_params)
 
-        format.html { redirect_to @menu, notice: 'Menu was successfully updated.' }
+        format.html { redirect_to @menu, notice: 'El Menu se ha editado correctamente.' }
         format.json { render :show, status: :ok, location: @menu }
       else
         format.html { render :edit }

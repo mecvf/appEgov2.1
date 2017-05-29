@@ -5,12 +5,22 @@
   <%= @menu.fecha %>
 </p>
 <p>
-  <strong>Productos:</strong>
+  
   <% @menu.productos %>
 </p>
+<% @tipos.each do |t| %>
+      <p><label><%= t.nombre %></label></p>
+	<% @menu.productos.each do |producto| %>
+  		<%if producto.tipo.nombre==t.nombre %>        
+          <div class="field">
+            <p><%= producto.nombre %></p>            
+          </div>
+          <br>
+        <%else%>
+      
+   		<%end%>
 
-<% @menu.productos.each do |producto| %>
-  <p><%= link_to producto.nombre, producto %></p>
+	<%end%>
 <%end%>
 
 <div class="btn-group-vertical">
