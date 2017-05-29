@@ -7,6 +7,7 @@ class MenusController < ApplicationController
     @menus = Menu.all
     @productos = Producto.all
     @tiene_productos = TieneProducto.all
+    @tipos = Tipo.all
   end
 
   # GET /menus/1
@@ -25,12 +26,14 @@ class MenusController < ApplicationController
   def edit
     @productos = Producto.all
     @tipos = Tipo.all
-   
+    
   end
 
   # POST /menus
   # POST /menus.json
   def create
+    @tipos = Tipo.all
+    @productos = Producto.all
     @menu = Menu.new(menu_params)
     @menu.productos = params[:productos]
     respond_to do |format|
@@ -80,4 +83,18 @@ class MenusController < ApplicationController
     def menu_params
       params.require(:menu).permit(:fecha, :productos, :producto_id)
     end
+  end
+
+  def chequeada(valor)    
+    @productos.each do |prod|
+        @menu.productos.each do |p|
+          if p.id == valor 
+            return true          
+        end
+      end
+      return false    
+   end
+
+
+
 end

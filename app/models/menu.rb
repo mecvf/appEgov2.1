@@ -6,7 +6,8 @@ class Menu < ApplicationRecord
 	after_update :edit_productos
 	before_destroy :destroy_productos
 
-	
+	validates :fecha, uniqueness: {message: "^Ya existe menu para esa fecha"}
+
 	def productos=(value)
 		@productos = value
 	end

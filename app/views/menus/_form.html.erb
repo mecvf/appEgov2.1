@@ -19,17 +19,16 @@
     <% @tipos.each do |t| %>
       <p><label><%= t.nombre %></label></p>
       <% @productos.each do |producto| %>
-        <%if producto.tipo.nombre==t.nombre %>
-        
-        <div class="field">
-        <%= check_box_tag "productos[]", producto.id  %> <%= producto.nombre %>
-        </div>
-        <br>
-
-      <%else%>
+        <%if producto.tipo.nombre==t.nombre %>        
+          <div class="field">
+            <%= check_box_tag "productos[]", producto.id, chequeada(producto.id)  %> <%= producto.nombre %>
+            
+          </div>
+          <br>
+        <%else%>
       
+        <%end%>
       <%end%>
-    <%end%>
     <%end%>
 
 
