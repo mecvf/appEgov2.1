@@ -73,7 +73,7 @@ class MenusController < ApplicationController
   def destroy
     @menu.destroy
     respond_to do |format|
-      format.html { redirect_to menus_url, notice: 'Menu was successfully destroyed.' }
+      format.html { redirect_to menus_url, notice: 'El Menu se ha eliminado correctamente.' }
       format.json { head :no_content }
     end
   end
