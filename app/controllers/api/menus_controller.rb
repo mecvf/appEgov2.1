@@ -2,8 +2,10 @@ class Api::MenusController < ApplicationController
 	before_action :set_menu, only: [:show]
  
   def index
-    @menus = Menu.all
-    render json: @menus
+    @menu = Menu.last
+    # render json: @menu
+    render json: @menu.productos
+    
   end
  
   def show
