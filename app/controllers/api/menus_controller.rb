@@ -2,8 +2,11 @@ class Api::MenusController < ApplicationController
 	before_action :set_menu, only: [:show]
  
   def index
-    @menus = Menu.all
-    render json: @menus
+    @menu = Menu.last
+    respond_to do |format|
+      format.json  { render :json => {:menu => @menu, 
+                                  :productos => @menu.productos }}
+end
   end
  
   def show
@@ -15,6 +18,8 @@ class Api::MenusController < ApplicationController
     def set_menu
       @menu = Menu.find(params[:id])
     end
+
+
  
     
 end
