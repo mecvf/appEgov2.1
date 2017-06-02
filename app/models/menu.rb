@@ -26,8 +26,6 @@ class Menu < ApplicationRecord
 		TieneProducto.where(menu_id: self.id).destroy_all
 		
 		@productos.each do |producto_id|
-			
-		#raise @productos.to_yaml
 		
 		TieneProducto.create(producto_id: producto_id, menu_id: self.id)
 		

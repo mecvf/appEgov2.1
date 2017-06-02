@@ -11,9 +11,9 @@
 <% @tipos.each do |t| %>
       <p><label><%= t.nombre %></label></p>
 	<% @menu.productos.each do |producto| %>
-  		<%if producto.tipo.nombre==t.nombre %>        
+  		<%if producto.tipo && producto.tipo.nombre==t.nombre %>        
           <div class="field">
-            <p><%= producto.nombre %></p>            
+            <p><%= producto.nombre if producto %></p>            
           </div>
           <br>
         <%else%>
