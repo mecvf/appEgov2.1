@@ -15,9 +15,9 @@
   </br>
   <div class="panel-body form-group">
     <!--<p><label>Productos</label></p>-->
-  
+    <% if @tipos.present? %>
     <% @tipos.each do |t| %>
-    
+      
       <p><label><%= t.nombre %></label></p>
       <% @productos.each do |producto| %>
         <%if producto.tipo && producto.tipo.nombre==t.nombre %>        
@@ -31,6 +31,7 @@
         <%end%>
       <%end%>
     
+    <%end%>
     <%end%>
 
 

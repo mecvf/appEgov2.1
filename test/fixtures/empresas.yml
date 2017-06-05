@@ -15,3 +15,12 @@ two:
   telefono: 123456
   direccion: MyString
   email: gabo@gmail.com
+
+three:
+  rut: 1234567891014
+  nombre: MyString
+  razon_social: MyString
+  telefono: 1234567
+  direccion: MyString
+  email: gabo@gmail.com
+  
