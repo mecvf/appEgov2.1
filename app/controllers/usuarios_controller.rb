@@ -75,4 +75,8 @@ class UsuariosController < ApplicationController
     def usuario_params
       params.require(:usuario).permit(:ci, :nombres, :apellidos, :empresa_id, :tipo, :habilitado)
     end
+
+
+
+    
 end
