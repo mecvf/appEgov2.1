@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :usuarios
   resources :menus do
   	resources :productos
   end

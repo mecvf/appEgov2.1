@@ -1,0 +1,26 @@
+
+
+
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>CI: </strong>  <%= @usuario.ci %>
+</p>
+
+<p>
+  <strong>Nombres: </strong>  <%= @usuario.nombres %>
+</p>
+
+<p>
+  <strong>Apellidos: </strong>
+  <%= @usuario.apellidos %>
+</p>
+<p>
+  <strong>Empresa:</strong>
+  <%= @usuario.empresa.nombre %>
+</p>
+<p>
+</br>
+<div class="btn-group-vertical">
+<%= link_to 'Editar', edit_usuario_path(@usuario), class: 'btn btn-default' %> 
+<%= link_to 'Volver', usuarios_path, class: 'btn btn-info' %>
+</div>

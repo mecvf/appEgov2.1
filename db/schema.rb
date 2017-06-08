@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529165654) do
+ActiveRecord::Schema.define(version: 20170608163853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 20170529165654) do
   end
 
   create_table "franjas", force: :cascade do |t|
+    t.datetime "fecha"
+    t.decimal  "primera_hasta"
+    t.decimal  "primera_precio"
+    t.decimal  "segunda_hasta"
+    t.decimal  "segunda_precio"
+    t.decimal  "tercera_precio"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "fringes", force: :cascade do |t|
     t.datetime "fecha"
     t.decimal  "primera_hasta"
     t.decimal  "primera_precio"
@@ -79,7 +90,18 @@ ActiveRecord::Schema.define(version: 20170529165654) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "usuarios", force: :cascade do |t|
+    t.string   "nombres"
+    t.string   "apellidos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "empresa_id"
+    t.integer  "ci"
+    t.index ["empresa_id"], name: "index_usuarios_on_empresa_id", using: :btree
+  end
+
   add_foreign_key "productos", "tipos"
   add_foreign_key "tiene_productos", "menus"
   add_foreign_key "tiene_productos", "productos"
+  add_foreign_key "usuarios", "empresas"
 end
