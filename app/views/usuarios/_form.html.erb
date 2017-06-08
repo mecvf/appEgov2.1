@@ -23,8 +23,16 @@
     <%= f.select :empresa_id,  Empresa.all.collect {|t| [ t.nombre, t.id ] }, { include_blank: 'Seleccionar Empresa' }, class: 'form-control' %>
   </div>
   </br>
-  
-  </br>
+    <div class="panel-body form-group">
+        <p><%= f.label 'Tipo de Usuario' %></p>
+         <%= f.select :tipo, tipo_usuario, { include_blank: 'Seleccionar tipo de Usuario' }, class: 'form-control' %>
+      </div>
+  </br> 
+  <div class="panel-body form-group">
+    <%= f.label "Habilitado:      " %>  <%= f.check_box :habilitado, {:checked => true} %>
+            
+   </div>
+   </br>
     <div class="col-md-12">
       <div class="btn-group btn-group-justified">
         

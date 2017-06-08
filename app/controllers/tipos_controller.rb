@@ -25,7 +25,7 @@ class TiposController < ApplicationController
   # POST /tipos.json
   def create
     @tipo = Tipo.new(tipo_params)
-
+    @tipo.nombre = @tipo.nombre.upcase
     respond_to do |format|
       if @tipo.save
         format.html { redirect_to @tipo, notice: 'El Tipo de producto se ha creado correctamente.' }

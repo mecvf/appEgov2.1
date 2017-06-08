@@ -19,6 +19,14 @@
   <%= @usuario.empresa.nombre %>
 </p>
 <p>
+  <strong>Tipo: </strong>
+  <%= @usuario.tipo %>
+</p>
+<p>
+  <strong>Empresa:</strong>
+  <%= @usuario.habilitado %>
+</p>
+<p>
 </br>
 <div class="btn-group-vertical">
 <%= link_to 'Editar', edit_usuario_path(@usuario), class: 'btn btn-default' %> 

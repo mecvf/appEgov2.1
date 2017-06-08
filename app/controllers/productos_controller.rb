@@ -27,7 +27,7 @@ class ProductosController < ApplicationController
   # POST /productos.json
   def create
     @producto = Producto.new(producto_params)
-    
+    @producto.nombre = @producto.nombre.upcase
     respond_to do |format|
       if @producto.save
         format.html { redirect_to @producto, notice: 'El Producto se ha creado correctamente.' }

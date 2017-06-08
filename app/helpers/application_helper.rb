@@ -22,4 +22,12 @@ module ApplicationHelper
 		['1.25'],
   	]
   end
+
+  def tipo_usuario
+  	[	
+		['ADMINISTRADOR'],
+		['OPERARIO'],
+		['USUARIO'],		
+  	]
+  end
 end

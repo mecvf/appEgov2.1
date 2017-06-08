@@ -25,7 +25,8 @@ class EmpresasController < ApplicationController
   # POST /empresas.json
   def create
     @empresa = Empresa.new(empresa_params)
-
+    @empresa.nombre = @empresa.nombre.upcase
+    @empresa.razon_social = @empresa.razon_social.upcase
     respond_to do |format|
       if @empresa.save
         format.html { redirect_to @empresa, notice: 'La Empresa se ha creado correctamente.' }

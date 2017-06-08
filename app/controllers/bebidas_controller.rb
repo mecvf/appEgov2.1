@@ -25,7 +25,7 @@ class BebidasController < ApplicationController
   # POST /bebidas.json
   def create
     @bebida = Bebida.new(bebida_params)
-
+    @bebida.nombre = @bebida.nombre.upcase
     respond_to do |format|
       if @bebida.save
         format.html { redirect_to @bebida, notice: 'La Bebida se ha creado correctamente.' }
